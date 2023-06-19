@@ -35,4 +35,15 @@ RUN mkdir -p /appdata/www
 # Config XDEBUG
 COPY ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
+# Install node and npm with NVM
+ENV NODE_VERSION=16.18.1
+RUN apt install -y curl
+USER appuser
+ENV NVM_DIR=/home/appuser/.nvm
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
+ENV PATH="${NVM_DIR}/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+
 WORKDIR /appdata/www
