@@ -5,4 +5,27 @@
         <h1 class="text-2xl">👨‍💻DebVlogs👩‍💻</h1>
         <h2 class="text-sm">Simple lectures to learn useful thing for your tech career</h2>
     </div>
+    <section class="grid gap-4 [grid-template-columns:_repeat(auto-fill,_minmax(16rem,_1fr))]">
+        {% for post in posts %}
+            <a href="{{ path('app_post_show', { id: post.id }) }}">
+                <article
+                        class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <img class="rounded-t-lg aspect-square mx-auto" src="{{ vich_uploader_asset(post) }}" alt="{{ post.title }}"/>
+                    <div class="p-5">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ post.title }}</h5>
+                        <div class="inline-flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Todo</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Make</span>
+                            <span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Categories</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Entity</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">And</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">The</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Relations</span>
+                            <span class="bg-pink-100 text-pink-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300">yuuupi</span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+        {% endfor %}
+    </section>
 {% endblock %}
