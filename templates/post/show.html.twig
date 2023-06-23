@@ -3,40 +3,11 @@
 {% block title %}Post{% endblock %}
 
 {% block body %}
-    <h1 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Post</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ post.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ post.title }}</td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                <td>{{ post.content }}</td>
-            </tr>
-            <tr>
-                <th>ImageName</th>
-                <td>{{ post.imageName }}</td>
-            </tr>
-            <tr>
-                <th>ImageSize</th>
-                <td>{{ post.imageSize }}</td>
-            </tr>
-            <tr>
-                <th>CreatedAt</th>
-                <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>UpdatedAt</th>
-                <td>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <h1 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">{{ post.title }}</h1>
+    <img class="aspect-square" src="{{ vich_uploader_asset(post) }}" alt="{{ post.title }}"/>
+    <div class="max-w-prose">
+    {{ post.content|markdown_to_html }}
+    </div>
 
     <a href="{{ path('app_post_index') }}">back to list</a>
 

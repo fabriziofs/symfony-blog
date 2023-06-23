@@ -11,6 +11,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.15",
         "gedmo/doctrine-extensions": "^3.11",
+        "league/commonmark": "^2.4",
         "symfony/console": "6.3.*",
         "symfony/dotenv": "6.3.*",
         "symfony/flex": "^2",
@@ -24,7 +25,8 @@
         "symfony/webpack-encore-bundle": "^2.0",
         "symfony/yaml": "6.3.*",
         "tales-from-a-dev/flowbite-bundle": "^0.2.5",
-        "twig/extra-bundle": "^2.12|^3.0",
+        "twig/extra-bundle": "^3.6",
+        "twig/markdown-extra": "^3.6",
         "twig/twig": "^2.12|^3.0",
         "vich/uploader-bundle": "^2.1"
     },
