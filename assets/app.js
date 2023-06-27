@@ -10,3 +10,9 @@ import './styles/app.css';
 
 // enable the interactive UI components from Flowbite
 import 'flowbite';
+
+const postContent = document.querySelector('span[data-post-content]');
+
+if (postContent) {
+    import('./postEditor');
+}

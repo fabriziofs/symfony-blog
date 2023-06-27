@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Post;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
@@ -14,8 +15,8 @@ class PostType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('content')
-            ->add('imageFile', VichImageType::class)
+            ->add('content', HiddenType::class)
+            ->add('imageFile', VichImageType::class, ['required' => false])
         ;
     }
 

@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tip-tap h1 {
+    font-size: 24px;
+}
+.tip-tap ul,
+.tip-tap ol {
+    padding: 0 1rem;
+}
+
+.tip-tap code {
+    background-color: rgba(97, 97, 97, 0.1);
+    color: #616161;
+}
+
+.tip-tap pre {
+    background: #0D0D0D;
+    color: #FFF;
+    font-family: 'JetBrainsMono', monospace;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.tip-tap code {
+    color: inherit;
+    padding: 0;
+    background: none;
+    font-size: 0.8rem;
+}
+
+.tip-tap img {
+    max-width: 100%;
+    height: auto;
+}
+
+.tip-tap hr {
+    margin: 1rem 0;
+}
+
+.tip-tap blockquote {
+    padding-left: 1rem;
+    border-left: 2px solid rgba(13, 13, 13, 0.1);
+}
