@@ -4,7 +4,6 @@ import Highlight from '@tiptap/extension-highlight'
 import Typography from '@tiptap/extension-typography'
 
 const postContent = document.querySelector('span[data-post-content]');
-console.log(postContent.innerHTML);
 const postContentInput = document.querySelector('#post_content');
 
 new Editor({
